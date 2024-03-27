@@ -1,0 +1,175 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sagiri</title>
+<link href="./Sagiri_files/style.css" rel="stylesheet">
+<script type="text/javascript" src="./Sagiri_files/jquery.mlens-1.0.min.js"></script> 
+<script type="text/javascript" src="./Sagiri_files/jquery.js"></script>
+
+
+<style>
+  p.serif{
+    font-family:"Times New Roman", Times, serif;
+  }
+  p.sansserif{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+</style>
+  
+</head>
+
+<body>
+<div class="content">
+  <h1 style="font-size: 30px;"><strong>Sagiri: Empowering LDR Enhancers with Generative Diffusion Prior</strong>&nbsp;&nbsp;</h1>
+  <p id="authors" class="serif">
+    <a href="https://ztmotalee.github.io/">Baiang Li<sup>1</sup></a>
+    <a href="http://jianwang-cmu.github.io">Jian Wang<sup>2</sup></a>
+    <a href="http://xuxiaogang.com">Xiaogang Xu<sup>3,4</sup></a>
+    <a href="https://zengyh1900.github.io">Yanhong Zeng<sup>1</sup></a>
+    <a href="https://sites.google.com/site/cszzhang">Zhao Zhang<sup>5</sup></a>
+    <a href="https://chenkai.site">Kai Chen<sup>1✝</sup></a>
+    <br>
+    <a style="font-size: 0.7em"><sup>✝</sup>Corresponding Author.</a>
+    <br>
+    <span style="font-size: 0.64em; margin-top: 0.4em">
+      <a><sup>1</sup>Shanghai AI Laboratory</a>
+      <a><sup>2</sup>Snap Research</a>
+      <a><sup>3</sup>The Chinese University of Hong Kong</a>
+      <a><sup>4</sup>Zhejiang University</a>
+      <a><sup>5</sup>Hefei University of Technology</a>
+    </span>
+  </p>
+  <font size="+1">
+    <p style="text-align: center;" class="serif">
+      <a href="" target="_blank" style="font-weight: bold;">[Paper]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/ztMotaLee/Sagiri/" target="_blank" style="font-weight: bold;">[Github]</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#bibtex" style="font-weight: bold;">[BibTeX]</a>
+    </p><br>
+  </font>
+
+  <font size="+1">
+    <p class="serif" style="color: rgba(224, 152, 223, 0.913); font-size: 1.5em; font-weight: bold">What can Sagiri do?</p>
+  </font>
+  <div class="row">
+    <div class="col">
+      <img src="Magics/SingleHDR/lq/00016_lq.jpg" alt="Caption 1" width="100%">
+      <!-- <p class="caption" style="text-align: center; margin-top: 5px;">Input</p> -->
+    </div>
+    <div class="col">
+      <img src="Magics/SingleHDR/1/00016_single.jpg" alt="Caption 2" width="100%">
+      <!-- <p class="caption" style="text-align: center; margin-top: 5px;">After restoration model</p> -->
+    </div>
+    <div class="col">
+      <img src="Magics/SingleHDR/2/00016_singlesagiri_nomask.png" alt="Caption 3" width="100%">
+      <!-- <p class="caption" style="text-align: center; margin-top: 5px;">After Sagiri</p> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img src="Magics/SingleHDR/lq/01595_lq.jpg" alt="Caption 1" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">Input</p>
+    </div>
+    <div class="col">
+      <img src="Magics/SingleHDR/1/01595_single.jpg" alt="Caption 2" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">After restoration model</p>
+    </div>
+    <div class="col">
+      <img src="Magics/SingleHDR/2/01595_0_single_sagiri.png" alt="Caption 3" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">After Sagiri(On entire image)</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img src="Magics/LCDPNet/lq/00460_lq.jpg" alt="Caption 1" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">Input</p>
+    </div>
+    <div class="col">
+      <img src="Magics/LCDPNet/1/00460_lcdp.jpg" alt="Caption 2" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">After restoration model</p>
+    </div>
+    <div class="col">
+      <img src="Magics/LCDPNet/2/00460_lcdp_sagiri.png" alt="Caption 3" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">After Sagiri(With region selection)</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <img src="Magics/LatentSwinIR/lq/00491_lq.jpg" alt="Caption 1" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">Input | After restoration model</p>
+    </div>
+    <!-- <div class="col">
+      <img src="Magics/LatentSwinIR/1/00491_stage1.png" alt="Caption 2" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">After restoration model</p>
+    </div> -->
+    <!-- <div class="col" style="text-align: center; margin-top: 5px;">
+      <div class="twentytwenty-container" data-orientation="horizontal">
+          <img src="Magics/LatentSwinIR/2/00491_0_lssagiri.png" alt="Caption 3" width="100%" />
+          <img src="slide_imgs/twilight_a.png" alt="Caption 3" width="100%"  />
+      </div>
+  </div> -->
+    <div class="col">  
+      <img src="Magics/LatentSwinIR/2/00491_0_lssagiri.png" alt="Caption 2" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">Restoration model + Sagiri(With prompt a)</p>
+    </div>
+    <div class="col">
+      <img src="Magics/LatentSwinIR/2/00491_lssagiri_v2.png" alt="Caption 3" width="100%">
+      <p class="caption" style="text-align: center; margin-top: 5px;">Restoration model + Sagiri(With prompt b)</p>
+    </div>
+    <p class="caption" style="text-align: center; margin-top: 5px;">Prompt a: `A building with a <strong>red</strong> brick exterior, white columns, and a <strong>black</strong> door...'; Prompt b: `A building with a <strong>black</strong> brick exterior, white columns, and a <strong>red</strong> door...'. Please zoom in to see more details.</p>
+
+  </div>
+</div>
+<div class="content">
+<p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">What's our task?</p>
+<p style="font-size: 1.2em" class="serif">
+  (a) Background: Common real-world scenes have an extensive dynamic range (1st row); camera image, usually 8-bit, has a limited dynamic range; images with different exposure times cover different zones of the dynamic range of the scene; the bright regions can easily get over-saturated and dark areas can be close to 0 or overwhelmed by noise (2nd and 3rd rows); HDR image, usually 32-bit or 64-bit, can represent the information of the original scene well traditionally through merging different exposure LDR images (4th row); the HDR image needs tone mapping to be shown on a LDR display or be saved as a traditional 8-bit image format (5th row). <br><br>
+
+  (b) Our task is single LDR image enhancement: given an LDR image, output an enhanced version with improved tone mapping as well as detail generation or enhancement. It includes four subtasks as outlined on the right; our stage 1 Latent-SwinIR$_c$ is responsible for subtask 1 tone mapping, and our proposed Sagiri is responsible for subtasks 2-4 generating content on originally over-saturated and dark regions, enhancing details and reducing noise.
+</p>
+<img class="summary-img" src="figs/problem.png" style="width:100%;"> <br>
+</div>
+<div class="content">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">Methodology of Sagiri</p>
+  <!-- <p class="serif" style="color: rgba(224, 152, 223, 0.913); font-size: 2em; font-weight: bold">Sagiri</p> -->
+  <p style="font-size: 1.2em" class="serif">
+    Capturing the full dynamic range of natural scenes presents a significant challenge in photography, often resulting in Low Dynamic Range images with over and under-exposed areas, known as Detail-Deprived Zones, where content details are significantly diminished. 
+    In our project, we propose Sagiri model which is a versatile tool for fine-tuning restored results, generating more accurate details in known regions, and producing high-quality content in Detail-Deprived Zones. Additionally, it allows users to specify where and what to synthesize in areas lacking content, enhancing user engagement and control.<br><br>
+  </p>
+  <img class="summary-img" src="figs/Sagiri.png" style="width:100%;"> <br>
+</div>
+
+
+<!-- <div class="content" id="bibtex">
+  <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">BibTeX</p>
+  <code> @misc{guo2023Sagiri,<br>
+  &nbsp;&nbsp;title={Sagiri: Animate Your Personalized Text-to-Image Diffusion Models without Specific Tuning},<br>
+  &nbsp;&nbsp;author={Yuwei Guo and Ceyuan Yang and Anyi Rao and Zhengyang Liang and Yaohui Wang and Yu Qiao and Maneesh Agrawala and Dahua Lin and Bo Dai},<br>
+  &nbsp;&nbsp;booktitle={arXiv preprint arxiv:2307.04725},<br>
+  &nbsp;&nbsp;year={2023},<br>
+  &nbsp;&nbsp;archivePrefix={arXiv},<br>
+  &nbsp;&nbsp;primaryClass={cs.CV}<br>
+  } </code> 
+</div> -->
+
+<div class="content">
+  <p class="serif">
+    Project page template is borrowed from <a href="https://animatediff.github.io">AnimateDiff.</a>.
+  </p>
+</div>
+
+</body>
+
+<script>
+var videos = document.getElementsByClassName("clickplay");
+for (var i = 0; i < videos.length; i++) {
+  videos[i].addEventListener("click", function() {
+    this.play();
+  });
+  videos[i].addEventListener("ended", function() {
+    this.pause();
+    this.currentTime = 0;
+  });
+}
+</script>
+
+</html>
