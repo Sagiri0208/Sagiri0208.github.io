@@ -124,9 +124,8 @@
 <div class="content">
 <p style="text-align:left; font-size: 2em; font-weight: bold" class="serif">What's our task?</p>
 <p style="font-size: 1.2em" class="serif">
-  (a) Background: Common real-world scenes have an extensive dynamic range (1st row); camera image, usually 8-bit, has a limited dynamic range; images with different exposure times cover different zones of the dynamic range of the scene; the bright regions can easily get over-saturated and dark areas can be close to 0 or overwhelmed by noise (2nd and 3rd rows); HDR image, usually 32-bit or 64-bit, can represent the information of the original scene well traditionally through merging different exposure LDR images (4th row); the HDR image needs tone mapping to be shown on a LDR display or be saved as a traditional 8-bit image format (5th row). <br><br>
-
-  (b) Our task is single LDR image enhancement: given an LDR image, output an enhanced version with improved tone mapping as well as detail generation or enhancement. It includes four subtasks as outlined on the right; our stage 1 Latent-SwinIR$_c$ is responsible for subtask 1 tone mapping, and our proposed Sagiri is responsible for subtasks 2-4 generating content on originally over-saturated and dark regions, enhancing details and reducing noise.
+(a) Real-world scenarios have broad dynamic ranges. However when captured by normal low bit mobile camera, the chosen exposure may often face over-saturated bright regions or heavily quantized dark areas with strong noise. (b) Existing works on mis-exposed/low light image enhancement, multi-exposure HDR (high dynamic range) reconstruction and single-exposure HDR reconstruction can enhance SDR (standard dynamic range) images with no or small area of missing content, they are not designed to deal with large dynamic range extreme areas. (c) As a result, such methods often create blurry and unnatural imagery at dynamic range extremes. In this work, we aim to enhance these exposure-limited situations by analyzing and decomposing the complex task into the following challenges:
+    (a) color and brightness mapping, (b) denoising of dark areas, (c) detail enhancement in low bit-depth regions, and (d) content generation for saturated or near-black regions. 
 </p>
 <img class="summary-img" src="figs/problem.png" style="width:100%;"> <br>
 </div>
